@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Proyecto_VETERINARIA_BD.Data;
+using Proyecto_VETERINARIA_BD.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
