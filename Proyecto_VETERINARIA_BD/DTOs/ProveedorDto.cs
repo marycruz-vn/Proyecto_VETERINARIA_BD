@@ -2,8 +2,11 @@
 {
     public class ProveedorListarDto
     {
+        public int IdProveedor { get; set; }
         public string? NombreEmpresa { get; set; }
+        public string? Telefono { get; set; }
         public string? Correo { get; set; }
+        public string? Direccion { get; set; }
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 20;
     }
@@ -11,6 +14,10 @@
     public class ProveedorObtenerPorIDDto
     {
         public int IdProveedor { get; set; }
+        public string? NombreEmpresa { get; set; }
+        public string? Telefono { get; set; }
+        public string? Correo { get; set; }
+        public string? Direccion { get; set; }
     }
 
     public class ProveedorInsertarDto

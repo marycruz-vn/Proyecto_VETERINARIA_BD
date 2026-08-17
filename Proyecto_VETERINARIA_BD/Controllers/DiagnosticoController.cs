@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto_VETERINARIA_BD.DTOs;
 using Proyecto_VETERINARIA_BD.Interfaces;
 
@@ -6,6 +7,7 @@ namespace Proyecto_VETERINARIA_BD.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class DiagnosticoController : ControllerBase
     {
         private readonly IDiagnosticoService _diagnosticoService;
@@ -34,6 +36,7 @@ namespace Proyecto_VETERINARIA_BD.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,Veterinario")]
         public async Task<IActionResult> Insertar([FromBody] DiagnosticoInsertarDto dto)
         {
             var result = await _diagnosticoService.InsertarAsync(dto);
@@ -41,6 +44,7 @@ namespace Proyecto_VETERINARIA_BD.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin,Veterinario")]
         public async Task<IActionResult> Actualizar([FromBody] DiagnosticoActualizarDto dto)
         {
             var result = await _diagnosticoService.ActualizarAsync(dto);
@@ -52,6 +56,7 @@ namespace Proyecto_VETERINARIA_BD.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,Veterinario")]
         public async Task<IActionResult> Eliminar(int id)
         {
             var result = await _diagnosticoService.EliminarAsync(new DiagnosticoEliminarDto { IdDiagnostico = id });

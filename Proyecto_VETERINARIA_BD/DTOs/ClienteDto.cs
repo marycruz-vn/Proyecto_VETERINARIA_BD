@@ -2,9 +2,13 @@
 {
     public class ClienteListarDto
     {
+        public int IdCliente { get; set; }
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
+        public string? Telefono { get; set; }
         public string? Correo { get; set; }
+        public string? Direccion { get; set; }
+        public DateOnly? FechaRegistro { get; set; }
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 20;
     }
@@ -12,6 +16,12 @@
     public class ClienteObtenerPorIDDto
     {
         public int IdCliente { get; set; }
+        public string? Nombre { get; set; }
+        public string? Apellido { get; set; }
+        public string? Telefono { get; set; }
+        public string? Correo { get; set; }
+        public string? Direccion { get; set; }
+        public DateOnly? FechaRegistro { get; set; }
     }
 
     public class ClienteInsertarDto

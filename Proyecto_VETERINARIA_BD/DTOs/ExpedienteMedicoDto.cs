@@ -2,8 +2,11 @@
 {
     public class ExpedienteListarDto
     {
+        public int IdExpediente { get; set; }
         public int? IdMascota { get; set; }
-        public DateTime? Fecha { get; set; }
+        public DateOnly? Fecha { get; set; }
+        public string? Observaciones { get; set; }
+        public string? TratamientoGeneral { get; set; }
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 20;
     }
@@ -11,6 +14,10 @@
     public class ExpedienteObtenerPorIDDto
     {
         public int IdExpediente { get; set; }
+        public int? IdMascota { get; set; }
+        public DateOnly? Fecha { get; set; }
+        public string? Observaciones { get; set; }
+        public string? TratamientoGeneral { get; set; }
     }
 
     public class ExpedienteInsertarDto

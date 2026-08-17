@@ -2,10 +2,15 @@
 {
     public class MascotaListarDto
     {
+        public int IdMascota { get; set; }
+        public int? IdCliente { get; set; }
         public string? Nombre { get; set; }
         public string? Especie { get; set; }
         public string? Raza { get; set; }
-        public int? IdCliente { get; set; }
+        public string? Sexo { get; set; }
+        public DateOnly? FechaNacimiento { get; set; }
+        public decimal? Peso { get; set; }
+        public string? Alergias { get; set; }
         public int PageNumber { get; set; } = 1;
         public int PageSize { get; set; } = 20;
     }
@@ -13,6 +18,14 @@
     public class MascotaObtenerPorIDDto
     {
         public int IdMascota { get; set; }
+        public int? IdCliente { get; set; }
+        public string? Nombre { get; set; }
+        public string? Especie { get; set; }
+        public string? Raza { get; set; }
+        public string? Sexo { get; set; }
+        public DateOnly? FechaNacimiento { get; set; }
+        public decimal? Peso { get; set; }
+        public string? Alergias { get; set; }
     }
 
     public class MascotaInsertarDto
